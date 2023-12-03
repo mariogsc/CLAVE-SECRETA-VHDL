@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="63" Path="C:/Users/alvar/OneDrive/Escritorio/Trabajo_SED/CLAVE-SECRETA-VHDL/SED.xpr">
+<Project Product="Vivado" Version="7" Minor="63" Path="C:/Users/Mario/Desktop/CLAVE SECRETA VHDL/CLAVE-SECRETA-VHDL/SED.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="76e421f5c52b43b8992b99d2dba403b5"/>
