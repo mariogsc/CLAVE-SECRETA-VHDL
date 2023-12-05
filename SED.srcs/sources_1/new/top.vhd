@@ -5,13 +5,12 @@ USE ieee.std_logic_unsigned.ALL;
 
 ENTITY top IS
  PORT ( 
-   -- ENTRADAS
-   num : IN std_logic_vector(3 DOWNTO 0);
    boton: IN std_logic;
+   num : IN std_logic_vector(3 DOWNTO 0);
    reset: IN std_logic;
    CLK_top: IN std_logic;
    
-   -- SALIDAS LED
+   -- SALIDAS LEDs INTERNOS 
    led_b: out std_logic;
    led_s0: out std_logic;
    led_s1: out std_logic;
@@ -19,18 +18,26 @@ ENTITY top IS
    led_s3: out std_logic;
    led_s4: out std_logic;
    led_s5: out std_logic;
-   check: out std_logic;
+   led_s6:out std_logic;
+   led_check: out std_logic;
    
    -- SALIDAS DISPLAYS 7 SEGMENTOS
    display: OUT std_logic_vector(3 DOWNTO 0);
    display_izq: OUT std_logic_vector(3 DOWNTO 0);
-   segment : OUT std_logic_vector(6 DOWNTO 0)
+   segment : OUT std_logic_vector(6 DOWNTO 0);
+   
+   -- SALIDAS A ELEMENTOS EXTERNOS
+   pwm: OUT std_logic;
+   pin_led_verde: OUT std_logic;
+   pin_led_rojo: OUT std_logic
  );
 END top;
 
 ARCHITECTURE BEHAVIORAL of top is
 type STATES is (s0,s1,s2,s3,s4,s5,s6);
 type segments_value is array(3 downto 0) of std_logic_vector(3 downto 0);
+
+-- COMPONENTES
   COMPONENT decoder
     PORT (
     entrada : IN std_logic_vector(3 DOWNTO 0);
@@ -48,6 +55,21 @@ type segments_value is array(3 downto 0) of std_logic_vector(3 downto 0);
     SYNC_OUT : out STD_LOGIC);
     end component;
     
+    component servomotor is
+    Port ( 
+        CLK: in std_logic;
+        entrada : in std_logic;
+        pwm: out std_logic);
+    end component;
+    
+    component led is
+    Port ( 
+        CLK: in std_logic;
+        entrada : in std_logic;
+        salida: out std_logic);
+    end component;
+    
+    
   signal current_state: STATES:= s0;
   signal next_state: STATES;
   signal Internal_CLK, syncin_edge, boton_sig: std_logic;
@@ -57,6 +79,8 @@ type segments_value is array(3 downto 0) of std_logic_vector(3 downto 0);
   signal contrasena_value: segments_value;
   signal contrasena_value_display: segments_value;
   signal contrasena_correcta: segments_value:=("1000","0000","0000","0000");
+  signal check: std_logic;
+  signal not_check: std_logic;
 BEGIN
   
   Inst_decoder: decoder PORT MAP (
@@ -76,6 +100,27 @@ BEGIN
      CLK => clk_top,
      ASYNC_IN => boton,
      SYNC_OUT => syncin_edge
+    );
+    
+    inst_servomotor: servomotor
+    PORT MAP(
+        CLK=>clk_top,
+        entrada=>check,
+        pwm=>pwm
+    );
+    
+    inst_led_verde: led
+    PORT MAP(
+        CLK=>clk_top,
+        entrada=>check,
+        salida=>pin_led_verde
+    );
+    
+     inst_led_rojo: led
+    PORT MAP(
+        CLK=>clk_top,
+        entrada=>not_check,
+        salida=>pin_led_rojo
     );
     
     state_register: process (reset,CLK_top)
@@ -219,10 +264,11 @@ BEGIN
         end if;
     end process;
     
+    -- SE�ALES AUXILIARES
     contrasena_value_display<=contrasena_value;
+    not_check<=not check;    
     
-    
-    -- UTILIZACIÓN DE LEDS PARA VER EL FUNCIONAMIENTO DE LAS SEÑALES Y ESTADOS
+    -- UTILIZACION DE LEDS PARA VER EL FUNCIONAMIENTO DE LAS SENALES Y ESTADOS
     led_b<='1' when boton='1' else '0';
     led_s0<='1' when current_state=s0 else '0';
     led_s1<='1' when current_state=s1 else '0';
@@ -230,6 +276,9 @@ BEGIN
     led_s3<='1' when current_state=s3 else '0';
     led_s4<='1' when current_state=s4 else '0';
     led_s5<='1' when current_state=s5 else '0';
-        
+    led_s5<='1' when current_state=s5 else '0';
+    
+    -- ELEMENTOS EXTERNOS
+    led_check<='1' when check='1' else '0';
     
 end BEHAVIORAL;

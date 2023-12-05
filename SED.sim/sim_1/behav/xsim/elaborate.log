@@ -1,0 +1,9 @@
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1537] value 0 is out of target constraint range 1 to 2147483647 [C:/Users/Mario/Desktop/CLAVE SECRETA VHDL/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/top.vhd:143]
+ERROR: [VRFC 10-8350] formal port 'led' of mode 'out' cannot be associated with actual port 'led' of mode 'in' [C:/Users/Mario/Desktop/CLAVE SECRETA VHDL/CLAVE-SECRETA-VHDL/SED.srcs/sim_1/new/top_tb.vhd:57]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit top_tb in library work failed.

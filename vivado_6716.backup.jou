@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Dec  4 19:36:46 2023
+# Process ID: 6716
+# Current directory: C:/Users/alvar/OneDrive/Escritorio/CLAVE-SECRETA-VHDL
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10560 C:\Users\alvar\OneDrive\Escritorio\CLAVE-SECRETA-VHDL\SED.xpr
+# Log file: C:/Users/alvar/OneDrive/Escritorio/CLAVE-SECRETA-VHDL/vivado.log
+# Journal file: C:/Users/alvar/OneDrive/Escritorio/CLAVE-SECRETA-VHDL\vivado.jou
+# Running On: LAPTOP-EC3OLLEQ, OS: Windows, CPU Frequency: 2419 MHz, CPU Physical cores: 4, Host memory: 8216 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/alvar/OneDrive/Escritorio/CLAVE-SECRETA-VHDL/SED.xpr
+update_compile_order -fileset sources_1
+launch_simulation -mode post-synthesis -type functional
