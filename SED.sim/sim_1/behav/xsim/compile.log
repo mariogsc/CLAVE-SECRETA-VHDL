@@ -1,10 +1,14 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Mario/Desktop/CLAVE SECRETA VHDL/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/EDGEDCTR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/alvar/OneDrive/Escritorio/Trabajo_SED/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/EDGEDCTR.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'EDGEDCTR'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Mario/Desktop/CLAVE SECRETA VHDL/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/SYNCHRNZR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/alvar/OneDrive/Escritorio/Trabajo_SED/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/SYNCHRNZR.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'SYNCHRNZR'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Mario/Desktop/CLAVE SECRETA VHDL/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/alvar/OneDrive/Escritorio/Trabajo_SED/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/decoder.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'decoder'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Mario/Desktop/CLAVE SECRETA VHDL/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/alvar/OneDrive/Escritorio/Trabajo_SED/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/led.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'led'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/alvar/OneDrive/Escritorio/Trabajo_SED/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/servomotor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'servomotor'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/alvar/OneDrive/Escritorio/Trabajo_SED/CLAVE-SECRETA-VHDL/SED.srcs/sources_1/new/top.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'top'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Mario/Desktop/CLAVE SECRETA VHDL/CLAVE-SECRETA-VHDL/SED.srcs/sim_1/new/top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/alvar/OneDrive/Escritorio/Trabajo_SED/CLAVE-SECRETA-VHDL/SED.srcs/sim_1/new/top_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'top_tb'

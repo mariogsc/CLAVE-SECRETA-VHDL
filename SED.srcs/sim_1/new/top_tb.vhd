@@ -164,6 +164,30 @@ Prueba_decoder:
                 severity note;
                 wait;
        end process Prueba_decoder;
+            
                
+  --Test reset
+process_reset: process begin
+    reset_tb<='0' after 0.25*CLK_period, '1' after 0.75*CLK_period;
+end process process_reset;
   
+--Test entrada  
+process_entrada: process begin
+    num_tb<="0101"; -- contraseña incorrecta
+    wait for 2500 ns;
+    num_tb<="1000"; -- contraseña correcta
+    wait for 47500 ns;
+end process process_entrada;
+
+--Test boton
+process_boton: process begin
+    for i in 0 to 500 loop
+        wait for 100 ns;  
+        boton_tb <= not boton_tb;  
+    end loop;
+    wait;
+end process process_boton;
+
 end Behavioral;
+
+
