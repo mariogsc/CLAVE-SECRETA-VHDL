@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../SED.srcs/sources_1/new/EDGEDCTR.vhd" \
+"../../../../SED.srcs/sources_1/new/FSM.vhd" \
+"../../../../SED.srcs/sources_1/new/SYNCHRNZR.vhd" \
+"../../../../SED.srcs/sources_1/new/decoder.vhd" \
+"../../../../SED.srcs/sources_1/new/led.vhd" \
+"../../../../SED.srcs/sources_1/new/servomotor.vhd" \
+"../../../../SED.srcs/sources_1/new/top.vhd" \
+
+# Do not sort compile order
+nosort
